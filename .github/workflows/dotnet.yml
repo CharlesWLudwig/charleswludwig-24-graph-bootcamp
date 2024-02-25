@@ -40,8 +40,8 @@ jobs:
         pwd $HOME/secrets/appsettings.json
         cp $HOME/secrets/appsettings.json appsettings.json
         echo "This is the Neoflix/appsettings.json file"
-        cat appsettings.json
-        pwd appsettings.json
+        cat ./Neoflix/appsettings.json
+        pwd ./Neoflix/appsettings.json
       
     - name: Install Driver
       run: dotnet add Neoflix package Neo4j.Driver
