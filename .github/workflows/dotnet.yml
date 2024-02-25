@@ -34,20 +34,20 @@ jobs:
       env:
         LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
     
-    - name: Read appsettings.json 
+    - name: Move appsettings.json 
       run: |
         mv $HOME/secrets/appsettings.json Neoflix/appsettings.json
-        cat Neoflix/appsettings.json
+#       cat Neoflix/appsettings.json
 
     - name: Decrypt Neo4j.cs
       run: ./decrypt_secret_2.sh
       env:
         LARGE_SECRET_PASSPHRASE_2: ${{ secrets.LARGE_SECRET_PASSPHRASE_2 }}
 
-    - name: Read Neo4j.cs
+    - name: Move Neo4j.cs
       run: |
           mv $HOME/secretstwo/Neo4j.cs Neoflix/Neo4j.cs
-          cat Neoflix/Neo4j.cs
+#         cat Neoflix/Neo4j.cs
     
     - name: Install Driver
       run: dotnet add Neoflix package Neo4j.Driver
