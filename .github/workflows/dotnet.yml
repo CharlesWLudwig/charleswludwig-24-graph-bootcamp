@@ -23,7 +23,6 @@ jobs:
 
     - name: Setup Node
       run: npm i package.json
-      run: npm i --save neo4j-driver
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
