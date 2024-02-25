@@ -29,6 +29,9 @@ jobs:
       with:
         dotnet-version: 6.0.x
 
+    - name: Install Driver
+      run: dotnet add Neoflix package Neo4j.Driver 
+
     - name: Decrypt appsettings.json
       run: ./decrypt_secret.sh
       env:
@@ -58,9 +61,6 @@ jobs:
       run: |
           mv $HOME/secretsthree/Program.cs Neoflix/Program.cs
 #         cat Neoflix/Program.cs
-
-    - name: Install Driver
-      run: dotnet add Neoflix package Neo4j.Driver
 
     - name: Restore
       run: dotnet restore
