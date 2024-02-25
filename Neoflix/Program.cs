@@ -20,6 +20,10 @@ namespace Neoflix
 
             // configure and run website
             await CreateHostBuilder(args).Build().RunAsync();
+
+            await driver.VerifyConnectivityAsync();
+
+            Console.WriteLine("Connection Verified!");
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args)
