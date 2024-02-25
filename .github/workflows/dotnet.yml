@@ -23,6 +23,7 @@ jobs:
 
     - name: Setup Node
       run: npm i package.json
+      run: npm i --save neo4j-driver
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
@@ -41,7 +42,7 @@ jobs:
       run: dotnet add Neoflix package Neo4j.Driver
 
     - name: Build
-      run: dotnet build
+      run: dotnet build --restore
 
     - name: Test
       run: dotnet test --logger "console;verbosity=detailed" --filter "Neoflix.Challenges._01_ConnectToNeo4j"
