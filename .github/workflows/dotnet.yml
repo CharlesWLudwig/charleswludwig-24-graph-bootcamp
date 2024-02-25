@@ -57,7 +57,7 @@ jobs:
     - name: Move Program.cs
       run: |
           mv $HOME/secretsthree/Program.cs Neoflix/Program.cs
-          cat Neoflix/Program.cs
+#         cat Neoflix/Program.cs
 
     - name: Install Driver
       run: dotnet add Neoflix package Neo4j.Driver
