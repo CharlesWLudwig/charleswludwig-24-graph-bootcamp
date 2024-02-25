@@ -28,22 +28,22 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
-      
-    - name: Update appsettings.json file 
-      uses: jacobtomlinson/gha-find-replace@v3
-      with:
-        find: "NEO4J_URI"
-        replace: ${{ secrets.NEO4J_URI }}
-        include: "**./Neoflix/appsettings.json"
     
-    - name: Update appsettings.json file 
+    - name: Update appsettings.json file uri
+      uses: MathieuSoysal/replace-string-in-file@v1.0.0
+      with:
+        file: Neoflix/appsettings.json
+        old-string: NEO4J_URI
+        new-string: ${{ secrets.NEO4J_URI }}
+    
+    - name: Update appsettings.json file username
       uses: jacobtomlinson/gha-find-replace@v3
       with:
         find: "NEO4J_USERNAME"
         replace: ${{ secrets.NEO4J_USERNAME }}
         include: "**./Neoflix/appsettings.json"
 
-    - name: Update appsettings.json file 
+    - name: Update appsettings.json file password 
       uses: jacobtomlinson/gha-find-replace@v3
       with:
         find: "NEO4J_PASSWORD"
