@@ -29,11 +29,30 @@ jobs:
       with:
         dotnet-version: 6.0.x
       
-    - name: Create appsettings.json file       
-      run: |
-        touch Neoflix/appsettings.json
-        echo ${{ secrets.ENV_FILE }} >> Neoflix/appsettings.json
+    - name: Update appsettings.json file 
+      uses: jacobtomlinson/gha-find-replace@v3
+      with:
+        find: "NEO4J_URI"
+        replace: "${{ secrets.NEO4J_URI }}"
+        include: "**./Neoflix/appsettings.json"
+    
+    - name: Update appsettings.json file 
+      uses: jacobtomlinson/gha-find-replace@v3
+      with:
+        find: "NEO4J_USERNAME"
+        replace: "${{ secrets.NEO4J_USERNAME }}"
+        include: "**./Neoflix/appsettings.json"
+
+    - name: Update appsettings.json file 
+      uses: jacobtomlinson/gha-find-replace@v3
+      with:
+        find: "NEO4J_PASSWORD"
+        replace: "${{ secrets.NEO4J_PASSWORD }}"
+        include: "**./Neoflix/appsettings.json"
            
+    - name: Read appsettings.json
+      run: cat Neoflix/appsettings.json
+      
     - name: Install Driver
       run: dotnet add Neoflix package Neo4j.Driver
       
