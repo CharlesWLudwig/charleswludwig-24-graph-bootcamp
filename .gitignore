@@ -7,4 +7,5 @@ obj
 *.csproj.user
 *.sln.DotSettings.user
 .env
-node_modules/
+node_modules
+Neoflix/appsettings.json
