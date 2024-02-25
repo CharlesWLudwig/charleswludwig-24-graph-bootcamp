@@ -20,8 +20,7 @@ jobs:
       with:
         node-version: 20
         cache: 'npm'
-        cache-dependency-path: ./Neoflix/Properties/launchSettings.json
-    - run: npm test
+    - run: npm i dotenv
     
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
