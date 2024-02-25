@@ -29,7 +29,7 @@ jobs:
       with:
         dotnet-version: 6.0.x
 
-    - name: Decrypt large secret
+    - name: Decrypt appsettings.json
       run: ./decrypt_secret.sh
       env:
         LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
@@ -38,6 +38,15 @@ jobs:
         mv $HOME/secrets/appsettings.json Neoflix/appsettings.json
         cat Neoflix/appsettings.json
 
+    - name: Decrypt Neo4j.cs
+      run: ./decrypt_secret_2.sh
+      env:
+        LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE_2 }}
+    - name: 
+      run: |
+          mv $HOME/secrets/Neo4j.cs Neoflix/Neo4j.cs
+          cat Neoflix/Neo4j.cs
+    
     - name: Install Driver
       run: dotnet add Neoflix package Neo4j.Driver
 
