@@ -37,7 +37,7 @@ jobs:
         new-string: ${{ secrets.NEO4J_URI }}
 
     - name: Read file
-      run: echo Neoflix/appsettings.json
+      run: cat Neoflix/appsettings.json
     
     - name: Update appsettings.json file username
       uses: jacobtomlinson/gha-find-replace@v3
