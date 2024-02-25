@@ -33,21 +33,21 @@ jobs:
       uses: jacobtomlinson/gha-find-replace@v3
       with:
         find: "NEO4J_URI"
-        replace: "${{ secrets.NEO4J_URI }}"
+        replace: ${{ secrets.NEO4J_URI }}
         include: "**./Neoflix/appsettings.json"
     
     - name: Update appsettings.json file 
       uses: jacobtomlinson/gha-find-replace@v3
       with:
         find: "NEO4J_USERNAME"
-        replace: "${{ secrets.NEO4J_USERNAME }}"
+        replace: ${{ secrets.NEO4J_USERNAME }}
         include: "**./Neoflix/appsettings.json"
 
     - name: Update appsettings.json file 
       uses: jacobtomlinson/gha-find-replace@v3
       with:
         find: "NEO4J_PASSWORD"
-        replace: "${{ secrets.NEO4J_PASSWORD }}"
+        replace: ${{ secrets.NEO4J_PASSWORD }}
         include: "**./Neoflix/appsettings.json"
            
     - name: Read appsettings.json
