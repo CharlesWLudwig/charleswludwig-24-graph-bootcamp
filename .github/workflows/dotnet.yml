@@ -35,13 +35,10 @@ jobs:
         LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
     - name: 
       run: |
-        mv $HOME/secrets/appsettings.json ./Neoflix/appsettings.json
-      
+        mv $HOME/secrets/appsettings.json /home/runner/work/charleswludwig-24-graph-bootcamp/charleswludwig-24-graph-bootcamp/Neoflix/appsettings.json
+        
     - name: Install Driver
       run: dotnet add Neoflix package Neo4j.Driver
-
-    - name: Build
-      run: dotnet restore
 
     - name: Build
       run: dotnet build
