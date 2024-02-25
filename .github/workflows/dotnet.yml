@@ -34,7 +34,13 @@ jobs:
     
     - name: Install Driver
       run: dotnet add Neoflix package Neo4j.Driver
-    
+
+    - name: Create appsettings.json file
+      run: |
+        touch Neoflix/appsettings.json
+        echo "${{ secrets.ENV_FILE }}" > Neoflix/appsettings.json
+        cat Neoflix/appsettings.json
+          
     - name: Build
       run: dotnet build --no-restore
 
