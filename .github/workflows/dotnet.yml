@@ -38,8 +38,8 @@ jobs:
     - name: Create appsettings.json file
       run: |
         touch Neoflix/appsettings.json
-        echo "${{ secrets.ENV_FILE }}" > Neoflix/appsettings.json
-        pwd Neoflix
+        echo "${{ secrets.ENV_FILE }}" > ./Neoflix/appsettings.json
+        pwd ./Neoflix
           
     - name: Build
       run: dotnet build --no-restore
