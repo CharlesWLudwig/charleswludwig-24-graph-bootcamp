@@ -30,7 +30,7 @@ jobs:
         dotnet-version: 6.0.x
 
     - name: Decrypt large secret
-      run: ./Neoflix/decrypt_secret.sh
+      run: ./decrypt_secret.sh
       env:
         LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
     - name: 
@@ -38,7 +38,7 @@ jobs:
         echo "This is the $HOME file"
         cat $HOME/secrets/appsettings.json
         pwd $HOME/secrets/appsettings.json
-        cp $HOME/secrets/appsettings.json appsettings.json
+        cp $HOME/secrets/appsettings.json ./Neoflix/appsettings.json
         echo "This is the Neoflix/appsettings.json file"
         cat ./Neoflix/appsettings.json
         pwd ./Neoflix/appsettings.json
