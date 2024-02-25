@@ -33,7 +33,7 @@ jobs:
       run: ./decrypt_secret.sh
       env:
         LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
-    - name: 
+    - name: Read appsettings.json 
       run: |
         mv $HOME/secrets/appsettings.json Neoflix/appsettings.json
         cat Neoflix/appsettings.json
@@ -42,7 +42,7 @@ jobs:
       run: ./decrypt_secret_2.sh
       env:
         LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE_2 }}
-    - name: 
+    - name: Read Neo4j.cs
       run: |
           mv $HOME/secrets/Neo4j.cs Neoflix/Neo4j.cs
           cat Neoflix/Neo4j.cs
