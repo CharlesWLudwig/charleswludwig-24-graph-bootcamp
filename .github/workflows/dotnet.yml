@@ -34,7 +34,7 @@ jobs:
       with:
         file: Neoflix/appsettings.json
         old-string: NEO4J_URI
-        new-string: {{ secrets.NEO4J_URI }}
+        new-string: ${{ secrets.NEO4J_URI }}
 
     - name: Read file
       run: cat Neoflix/appsettings.json
