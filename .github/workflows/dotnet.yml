@@ -29,5 +29,6 @@ jobs:
     
     - name: Build
       run: dotnet build --no-restore
-#    - name: Test
-#      run: dotnet test --no-build --verbosity normal
+
+    - name: Test
+      run: dotnet test --logger "console;verbosity=detailed" --filter "Neoflix.Challenges._01_ConnectToNeo4j"

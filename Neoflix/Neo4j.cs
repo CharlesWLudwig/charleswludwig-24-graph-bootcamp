@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿// Import all relevant classes from neo4j-dotnet-driver
+using System.Threading.Tasks;
 using Neo4j.Driver;
 
 namespace Neoflix
@@ -27,6 +28,7 @@ namespace Neoflix
         /// <param name="password">Password for the user.</param>
         /// <returns>A task that represents the asynchronous initialization operation.</returns>
         // tag::initDriver[]
+        
         public static Task InitDriverAsync(string uri, string username, string password)
         {
             // TODO: Create an instance of the driver here
