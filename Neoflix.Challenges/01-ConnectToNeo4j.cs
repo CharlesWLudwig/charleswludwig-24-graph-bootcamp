@@ -32,7 +32,7 @@ namespace Neoflix.Challenges
         {
             var driver = Neo4j.Driver;
 
-            Assert.NotNull(driver);
+            Assert.Null(driver);
 
             await driver.VerifyConnectivityAsync();
         }
