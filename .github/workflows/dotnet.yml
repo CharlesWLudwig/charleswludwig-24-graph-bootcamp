@@ -39,7 +39,7 @@ jobs:
       run: |
         touch Neoflix/appsettings.json
         echo "${{ secrets.ENV_FILE }}" > Neoflix/appsettings.json
-        cat Neoflix/appsettings.json
+        pwd Neoflix
           
     - name: Build
       run: dotnet build --no-restore
