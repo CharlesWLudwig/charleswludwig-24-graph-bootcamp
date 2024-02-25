@@ -40,8 +40,11 @@ jobs:
     - name: Install Driver
       run: dotnet add Neoflix package Neo4j.Driver
 
+    - name: Restore
+      run: dotnet restore
+
     - name: Build
-      run: dotnet build --restore
+      run: dotnet build
 
     - name: Test
       run: dotnet test --logger "console;verbosity=detailed" --filter "Neoflix.Challenges._01_ConnectToNeo4j"
