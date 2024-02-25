@@ -21,7 +21,7 @@ namespace Neoflix
             // configure and run website
             await CreateHostBuilder(args).Build().RunAsync();
 
-            await Neo4j.VerifyConnectivityAsync();
+            await Config.VerifyConnectivityAsync();
 
             Console.WriteLine("Connection Verified!");
         }
