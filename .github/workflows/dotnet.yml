@@ -28,19 +28,19 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
-    
-    - name: Restore dependencies
-      run: dotnet restore
-    
-    - name: Install Driver
-      run: dotnet add Neoflix package Neo4j.Driver
-
+      
     - name: Create appsettings.json file
       run: |
         touch Neoflix/appsettings.json
         echo "${{ secrets.ENV_FILE }}" > ./Neoflix/appsettings.json
         pwd ./Neoflix
-          
+        
+    - name: Restore dependencies
+      run: dotnet restore
+    
+    - name: Install Driver
+      run: dotnet add Neoflix package Neo4j.Driver
+      
     - name: Build
       run: dotnet build --no-restore
 
