@@ -42,7 +42,7 @@ jobs:
     - name: Decrypt Neo4j.cs
       run: ./decrypt_secret_2.sh
       env:
-        LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE_2 }}
+        LARGE_SECRET_PASSPHRASE_2: ${{ secrets.LARGE_SECRET_PASSPHRASE_2 }}
 
     - name: Read Neo4j.cs
       run: |
