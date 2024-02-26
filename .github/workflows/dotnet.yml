@@ -42,26 +42,6 @@ jobs:
         mv $HOME/secrets/appsettings.json Neoflix/appsettings.json
 #       cat Neoflix/appsettings.json
 
-    - name: Decrypt Neo4j.cs
-      run: ./decrypt_secret_2.sh
-      env:
-        LARGE_SECRET_PASSPHRASE_2: ${{ secrets.LARGE_SECRET_PASSPHRASE_2 }}
-
-    - name: Move Neo4j.cs
-      run: |
-          mv $HOME/secretstwo/Neo4j.cs Neoflix/Neo4j.cs
-#         cat Neoflix/Neo4j.cs
-    
-    - name: Decrypt Program.cs
-      run: ./decrypt_secret_3.sh
-      env:
-        LARGE_SECRET_PASSPHRASE_3: ${{ secrets.LARGE_SECRET_PASSPHRASE_3 }}
-
-    - name: Move Program.cs
-      run: |
-          mv $HOME/secretsthree/Program.cs Neoflix/Program.cs
-#         cat Neoflix/Program.cs
-
     - name: Restore
       run: dotnet restore
 
