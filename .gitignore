@@ -9,4 +9,3 @@ obj
 .env
 node_modules
 Neoflix/appsettings.json
-Neoflix/Program.cs

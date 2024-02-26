@@ -24,7 +24,7 @@ namespace Neoflix.Challenges
         {
             var driver = Neo4j.Driver;
 
-            Assert.Null(driver);
+            Assert.NotNull(driver);
         }
 
         [Test, Order(3)]
